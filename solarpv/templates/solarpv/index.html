@@ -1,0 +1,323 @@
+{% load static %}
+<html>
+
+<head>
+    <title>Home page</title>
+    <meta charset="utf-8">
+    <meta name="description" content="SolarPV Research & Development">
+    <meta name="keywords" content="solarPV, SolarPV, Solar, solar, solar research">
+    <link href="{% static 'solarpv/css/DefinedByMe.css' %}" rel="stylesheet">
+    <link href="{% static 'solarpv/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'solarpv/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'solarpv/css/prettyPhoto.css' %}" rel="stylesheet">
+    <link href="{% static 'solarpv/css/responsive.css' %}" rel="stylesheet">
+    <link href="{% static 'solarpv/css/home.css' %}" rel="stylesheet">
+</head>
+
+<body class="homepage">
+    <header class="navbar navbar-static-top navbar-default">
+        <div class="container header" align="center">
+            <div class="logo" align="center">
+	    	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <a href="index.html"></a>
+                <img id="drag1" style="height: 140px;" src="{% static 'solarpv/img/logos/logo_circle_normalfont.svg' %}" alt="SolarPV Research & Development" draggable="true" ondragstart="drag(event)" hspace="0">
+            </div>
+            <div class="menu" style="">
+                <ul class="nav navbar-nav navbar-right" style="display: inline-block;float: none;">
+
+                    <li class="active"><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+
+                    <li><a href="#">Racks & Trackers</a></li>
+                    <li class="dropdown"><a href="#">PV Module<i class="caret"></i></a>
+			<div class="dropdown-content">
+			<a href="#">Testing & Certification</a>
+			<a href="#">RV Rating</a>
+			</div>
+		    </li>
+
+                    <li class="dropdown"><a href="#">PV Systems<i class="caret"></i></a>
+			<div class="dropdown-content">
+			<a href="#">PV System Performance</a>
+			<a href="#">Monitoring & Inspection</a>
+			<a href="#">Performance Analysis</a>
+			<a href="#">Compare System</a>
+			<a href="#">Certification</a>
+			</div>
+		    </li>
+
+                    <li class="dropdown"><a href="#">Data Analytics<i class="caret"></i></a>
+			<div class="dropdown-content">
+			<a href="#">Module lifetime prediction</a>
+			<a href="#">Energy Prediction</a>
+			</div>
+		    </li>
+
+                    <li class="dropdown"><a href="#">Cybersecurity<i class="caret"></i></a>
+			<div class="dropdown-content">
+			<a href="#">Cybersecurity monitor</a>
+			<a href="#">Energy Prediction</a>
+			</div>
+		    </li>
+
+                    <li><a href="#">Contact Us</a></li>
+
+                </ul>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+    	<div class="nav navbar-nav" style="float: right;">
+    		<li><a href="register" class="loginRegister" id="register">Register</a></li>
+    		<li><a href="login" class="loginRegister" id="login">Login</a></li>
+    		<li><p id="hellouser" class='c2'></p></li>
+    	</div>
+
+    	<div class="nav navbar-nav" style="float: left;">
+    		<li><a href="webportal" class="loginRegister" id="webportal">Web Portal</a></li>
+    	</div>
+        <section id="about-us">
+            <div class="InfoContainer">
+                <div class="container">
+
+                    <div width="100%" align="center">
+                        <h2><b><span class="c">S</span>olarPV <span class="c">R</span>esearch & <span class="c">D</span>evelopment <span class="c">L</span>ab </b></h2>
+                    </div>
+
+
+			<div class="slideshow-container">
+			<div class="mySlides fade">
+			  <div class="numbertext">1 / 4</div>
+              <img src="{% static 'solarpv/img/1.jpg' %}" style="width:100%">
+			</div>
+			
+			<div class="mySlides fade">
+			  <div class="numbertext">2 / 4</div>
+			  <img src="{% static 'solarpv/img/2.jpg' %}" style="width:100%">
+			</div>
+			
+			<div class="mySlides fade">
+			  <div class="numbertext">3 / 4</div>
+			  <img src="{% static 'solarpv/img/3.jpg' %}" style="width:100%">
+			</div>
+
+			<div class="mySlides fade">
+			  <div class="numbertext">4 / 4</div>
+			  <iframe height="600" width="100%" src="https://www.youtube.com/embed/NLO9w963Aj0"  title="What is Solar Power?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			
+			</div>
+			
+			<div style="text-align:center">
+			  <span class="dot" onclick="currentSlide(1)"></span> 
+			  <span class="dot" onclick="currentSlide(2)"></span> 
+			  <span class="dot" onclick="currentSlide(3)"></span> 
+			  <span class="dot" onclick="currentSlide(4)"></span> 
+			</div>
+                    <br>
+                    <div class="wrap">
+                        <div id="main">
+				<p> The solarPV Research & Development Lab provides training for graduate students in fundamental and applied research associated with the development and optimization of new solar energy technologies for the heating and cooling of buildings.</p>
+				<p>Current areas of research in the lab include thermal storage, combined space and water heating systems, solar cooling systems, and advanced solar building integration. Many of projects build on existing and new partnerships from academia, government and industry. Likewise, the research conducted by the Solar Energy Systems Lab supports industry and government initiatives to accelerate the use of solar energy in buildings.  </p>
+                            <br/>
+                            <h3><b>Research Interests:</b></h3>
+                            <ul>
+                                <li> PV Module Design</li>
+                                <li> PV System Performance Monitoring</li>
+                                <li> Data Analytics</li>
+                                <li> Cybersecurity</li>
+                            </ul>
+                            <br/>
+                            <br/>
+                        </div>
+                        <div id="sidebar">
+                            <div class="title-block">
+                                <h4>Latest News & Events</h4>
+                            </div>
+                            <div id="news" class="scroll-menu"></div>
+                            <br/>
+                            <div>
+
+                            	<h3><b>Click the button to get your coordinates</b></h3>
+
+				<button onclick="getLocation()" class="loginRegister" style="width:34%">Location</button>
+				
+				<b><p id="location"></p><b>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer id="footer">
+        <div class="footer-container ">
+            <h2>solarPV Research & Development</h2>
+            <p>Address: ARC 375, Lees A136, Ottawa, Ontario, Canada, K1N 6N5</p>
+            <p>Email: solarpv@gmail.com</p>
+            <p>Phone: (+1) 613-562-5800</p>
+        </div>
+
+        <div class="footer-container ">
+		<a class="hyperlink" href="#">Site Map</a> |
+		<a class="hyperlink" href="#">Terms & Conditions</a> |
+		<a class="hyperlink" href="#">Privacy Policy</a> |
+		<a class="hyperlink" href="#">About Us</a>
+        </div>
+	<div 
+    </footer>
+    <style>
+        #footer {
+            background-color: #e7e7e7;
+            color: #000;
+        }
+        
+    </style>
+    <script type="text/javascript" src="{% static 'solarpv/js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'solarpv/js/bootstrap.min.js' %}"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script>
+    	var x = document.getElementById("location");
+    	
+    	function getLocation() {
+    	  if (navigator.geolocation) {
+    	    navigator.geolocation.getCurrentPosition(showPosition);
+    	  } else { 
+    	    x.innerHTML = "Geolocation is not supported by this browser.";
+    	  }
+    	}
+    	
+    	function showPosition(position) {
+    	  x.innerHTML = "Latitude: " + position.coords.latitude + 
+    	  "<br>Longitude: " + position.coords.longitude;
+    	}
+    	</script>
+    <script>
+    	var slideIndex = 1;
+    	showSlides(slideIndex);
+    	
+    	function plusSlides(n) {
+    	  showSlides(slideIndex += n);
+    	}
+    	
+    	function currentSlide(n) {
+    	  showSlides(slideIndex = n);
+    	}
+    	
+    	function showSlides(n) {
+    	  var i;
+    	  var slides = document.getElementsByClassName("mySlides");
+    	  var dots = document.getElementsByClassName("dot");
+    	  if (n > slides.length) {slideIndex = 1}    
+    	  if (n < 1) {slideIndex = slides.length}
+    	  for (i = 0; i < slides.length; i++) {
+    	      slides[i].style.display = "none";  
+    	  }
+    	  for (i = 0; i < dots.length; i++) {
+    	      dots[i].className = dots[i].className.replace(" active", "");
+    	  }
+    	  slides[slideIndex-1].style.display = "block";  
+    	  dots[slideIndex-1].className += " active";
+    	}
+    </script>
+
+    <script>
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+    
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+    
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+    </script>
+
+    <script type="text/javascript">
+
+$(document).ready(function() {
+
+	if(typeof(Storage) !== "undefined") {
+		var username = sessionStorage.username;
+		if (username!=null){
+			console.log(username);
+			$("#register").hide();
+			$("#login").hide();
+			$("#hellouser").text('hello ' + username);
+		}			    
+	}	
+
+});
+    </script>
+    <script type="text/javascript">
+        d3.csv("{% static 'solarpv/news/news.csv' %}").then(function(data) {
+            data.sort(function(a, b) {
+                var date1 = a["Date"].split("/");
+                var date2 = b["Date"].split("/");
+                if (date1[2] < date2[2]) return 1;
+                if (date1[2] > date2[2]) return -1;
+                if (date1[2] === date2[2]) {
+                    if (date1[1] < date2[1]) return 1;
+                    if (date1[1] > date2[1]) return -1;
+                    if (date1[1] === date2[1]) {
+                        if (date1[0] < date2[0]) return 1;
+                        if (date1[0] > date2[0]) return -1;
+                        if (date1[0] === date2[0]) return 0;
+                    }
+                }
+                return 0;
+            });
+            var lastDate = [0, 0, 0];
+            var news = document.getElementById("news");
+            for (var i = 0; i < data.length; i++) {
+                var date = data[i]["Date"].split("/");
+                var content = data[i]["Content"];
+                var href = data[i]["Url"];
+                for (var j = 0; j < 3; j++) {
+                    if (lastDate[j] != date[j]) {
+                        var h = document.createElement("h4");
+                        h.innerText = toMonth(date[1]) + " " + Number(date[0]) + ", " + date[2];
+                        news.appendChild(h);
+                        break;
+                    }
+                    lastDate[j] = date[j];
+                }
+                var a = document.createElement("a");
+                var hr = document.createElement("hr");
+                a.innerText = content;
+		a.href = href
+                news.appendChild(a);
+                if (i != data.length - 1) news.appendChild(hr);
+            }
+        });
+
+        function toMonth(month) {
+            if (month === "1") return "January";
+            if (month === "2") return "February";
+            if (month === "3") return "March";
+            if (month === "4") return "April";
+            if (month === "5") return "May";
+            if (month === "6") return "June";
+            if (month === "7") return "July";
+            if (month === "8") return "August";
+            if (month === "9") return "September";
+            if (month === "10") return "October";
+            if (month === "11") return "November";
+            if (month === "12") return "December";
+            return "";
+        }
+    </script>
+</body>
+
+</html>

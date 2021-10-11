@@ -1,0 +1,132 @@
+{% load static %}
+<html>
+
+<head>
+    <link href="{% static 'solarpv/css/DefinedByMe.css' %}" rel="stylesheet">
+    <link href="{% static 'solarpv/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'solarpv/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'solarpv/css/prettyPhoto.css' %}" rel="stylesheet">
+    <link href="{% static 'solarpv/css/responsive.css' %}" rel="stylesheet">
+    <link href="{% static 'solarpv/css/home.css' %}" rel="stylesheet">
+</head>
+<body>
+
+
+<header class="navbar navbar-static-top navbar-default">
+    <div class="container header" align="center">
+        <div class="logo" align="center">
+            <a href=index"></a>
+            <img style="height: 140px;" src="{% static 'solarpv/img/logos/logo_circle_normalfont.svg' %}" alt="SolarPV Research & Development" hspace="0">
+        </div>
+        <div class="menu" style="">
+            <ul class="nav navbar-nav navbar-right" style="display: inline-block;float: none;">
+
+                <li><a href="index">Home</a></li>
+
+                <li><a href="#">Racks & Trackers</a></li>
+                <li class="dropdown"><a href="#">PV Module<i class="caret"></i></a>
+    		<div class="dropdown-content">
+    		<a href="#">Testing & Certification</a>
+    		<a href="#">RV Rating</a>
+    		</div>
+    	    </li>
+
+                <li class="dropdown"><a href="#">PV Systems<i class="caret"></i></a>
+    		<div class="dropdown-content">
+    		<a href="#">PV System Performance</a>
+    		<a href="#">Monitoring & Inspection</a>
+    		<a href="#">Performance Analysis</a>
+    		<a href="#">Compare System</a>
+    		<a href="#">Certification</a>
+    		</div>
+    	    </li>
+
+                <li class="dropdown"><a href="#">Data Analytics<i class="caret"></i></a>
+    		<div class="dropdown-content">
+    		<a href="#">Module lifetime prediction</a>
+    		<a href="#">Energy Prediction</a>
+    		</div>
+    	    </li>
+
+                <li class="dropdown"><a href="#">Cybersecurity<i class="caret"></i></a>
+    		<div class="dropdown-content">
+    		<a href="#">Cybersecurity monitor</a>
+    		<a href="#">Energy Prediction</a>
+    		</div>
+    	    </li>
+
+                <li><a href="#">Contact Us</a></li>
+
+            </ul>
+
+        </div>
+    </div>
+</header>
+
+<form style="border:1px solid #ccc">
+  <div class="container" >
+    <h1>Login</h1>
+
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter username" id="username">
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password"  id="psw" equired>
+    <div class="clearfix">
+
+      <button type="button" class="cancelbtn" onclick="location.href='index'">Cancel</button>
+      <button type="button" class="loginbtn" onclick="userlogin()">Login</button>
+    </div>
+  </div>
+</form>
+
+<script>
+
+	function userlogin() {
+	   var username = document.getElementById('username').value;
+	   if(username=="")
+	   {
+		alert("Empty username.")
+	        return;
+	   }
+	   var password = document.getElementById('psw').value;
+
+	   if(password=="")
+	   {
+		alert("Empty username.")
+	        return;
+	   }
+
+	   var stored_password = getCookie(username);
+	   if(stored_password!=null && stored_password==password){
+	        alert("You successfully login.");
+
+  		if(typeof(Storage) !== "undefined") {
+			sessionStorage.setItem("username", username);
+  		}
+		location.href = 'index';
+
+	   }
+
+	   else if (stored_password==null){
+		alert("Cannot find the input username.");
+	   }
+	   else {
+	        alert("Password is not correct.");
+		}
+	}
+
+	function getCookie(name) {
+	    var nameEQ = name + "=";
+	    var ca = document.cookie.split(';');
+	    for(var i=0;i < ca.length;i++) {
+	        var c = ca[i];
+	        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+	        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	    }
+	    return null;
+	}
+</script>
+</body>
+</html>
+
