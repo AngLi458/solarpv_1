@@ -26,11 +26,14 @@ u = User(client=q, first_name='Anggg', middle_name='', last_name='Li', job_title
 u.save()
 # use exclude to query user objects and delete user objects
 User.objects.exclude(user_id=1).delete()
+u = User.objects.get(user_id=1)
 
 # obtain client object
 q = Client.objects.get(pk=1)
 # create location object
-l = Location(client=q, address1='22 happy street', address2='23 new york street', city='NY', state='LA', postal_code='kkk nnn', country='US', phone_number='555-666-7777', fax_number='999-000-1111')
+l = Location(client=q, address1='22 happy street', address2='23 new york street', 
+             city='NY', state='LA', postal_code='kkk nnn', country='US', 
+             phone_number='555-666-7777', fax_number='999-000-1111')
 l.save()
 
 # query location object and update its address
@@ -43,6 +46,9 @@ l.save()
 product = Product(model_num='KKK-1', name='product1', cell_technology='cell_t', cell_manufacturer='cell_m', num_cells=10, num_cells_in_series=20, num_series_strings=1000, num_diodes=200, product_length=1001.2, product_width=33.3, product_weight=10001.5, superstrate_type='sup_t', superstrate_manufacturer='sup_m', substrate_type='sub_t', substrate_manufacturer='sub_m', frame_type='ft', frame_adhesive=10.1, encapsulant_type='en_t', encapsulant_manufacturer='en_m', junction_box_type='jbt', junction_box_manufacturer='jbm')
 product.save()
 
+product = Product(model_num='KKK-2', name='product2', cell_technology='cell_t', cell_manufacturer='cell_m', num_cells=10, num_cells_in_series=20, num_series_strings=1000, num_diodes=200, product_length=1001.2, product_width=33.3, product_weight=10001.5, superstrate_type='sup_t', superstrate_manufacturer='sup_m', substrate_type='sub_t', substrate_manufacturer='sub_m', frame_type='ft', frame_adhesive=10.1, encapsulant_type='en_t', encapsulant_manufacturer='en_m', junction_box_type='jbt', junction_box_manufacturer='jbm')
+product.save()
+
 #query location, product, and user objects
 l = Location.objects.get(pk=1)
 p = Product.objects.get(pk='KKK-1')
@@ -51,3 +57,14 @@ u = User.objects.get(pk=1)
 #create product_factory object
 pf = Product_factory(location=l, product=p, contact=u)
 pf.save()
+
+test = Test_standard(standard_name='standard1', description='description of test', published_date='2021-11-07')
+test.save()
+
+cert = Certificate(cert_num='cert1', location=l, report_num='report1', contact=u, test_standard=test, product=product, cert_issue_date='2021-11-09')
+
+cert.save()
+
+serv = Service(service_name='service1', description='service description', is_fi_required='n', fi_frequency=0.0, test_standard=test)
+
+serv.save()
