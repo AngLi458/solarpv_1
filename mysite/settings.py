@@ -93,15 +93,18 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
                 'ENGINE': 'django.db.backends.mysql', 
-                'NAME': 'solarpv',
-                'USER': 'root',
-                'PASSWORD': '123',
-                'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+                'NAME': 'liangasu$solarpv',
+                'USER': 'liangasu',
+                'PASSWORD': 'mermer7758521',
+                'HOST': 'liangasu.mysql.pythonanywhere-services.com',   # Or an IP Address that your DB is hosted on
                 'PORT': '3306',
             
     }
     
 }
+
+#superuser: liang liang123
+#mysql password on pythoneverywhere: mermer7758521
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
