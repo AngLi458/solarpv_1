@@ -9,7 +9,7 @@ class Client(models.Model):
     client_type = models.CharField(max_length=20)
 
 class User(models.Model):
-    user_id = models.AutoField(primary_key=True)
+    user_id = models.CharField(max_length=20, primary_key=True)
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=20)
     middle_name = models.CharField(max_length=20)
@@ -33,11 +33,17 @@ class Location(models.Model):
     phone_number = models.CharField(max_length=15)
     fax_number = models.CharField(max_length=15)
 
+    def __str__(self):
+        return self.address1
+
 class Test_standard(models.Model):
     standard_id = models.AutoField(primary_key=True)
     standard_name = models.CharField(max_length=20)
     description = models.CharField(max_length=300)
     published_date = models.DateTimeField()
+
+    def __str__(self):
+        return self.standard_name
 
 class Service(models.Model):
     service_id = models.AutoField(primary_key=True)
@@ -100,6 +106,9 @@ class Certificate(models.Model):
     test_standard = models.ForeignKey(Test_standard, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     cert_issue_date = models.DateTimeField()
+
+    def __str__(self):
+        return self.cert_num
 
 class Factory_inspection(models.Model):
     factory_inspection_id = models.AutoField(primary_key=True)

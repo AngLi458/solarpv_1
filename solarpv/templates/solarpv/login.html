@@ -63,68 +63,28 @@
     </div>
 </header>
 
-<form style="border:1px solid #ccc">
+<form style="border:1px solid #ccc" method="post" action="login">
+	{% csrf_token %}
   <div class="container" >
     <h1>Login</h1>
 
     <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter username" id="username">
+    <input type="text" placeholder="Enter username" id="username" name="username">
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password"  id="psw" equired>
+    <!--label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password"  id="psw" required-->
     <div class="clearfix">
 
       <button type="button" class="cancelbtn" onclick="location.href='index'">Cancel</button>
-      <button type="button" class="loginbtn" onclick="userlogin()">Login</button>
+      <button type="submit" class="loginbtn" >Login</button>
     </div>
   </div>
 </form>
 
 <script>
-
-	function userlogin() {
-	   var username = document.getElementById('username').value;
-	   if(username=="")
-	   {
-		alert("Empty username.")
-	        return;
-	   }
-	   var password = document.getElementById('psw').value;
-
-	   if(password=="")
-	   {
-		alert("Empty username.")
-	        return;
-	   }
-
-	   var stored_password = getCookie(username);
-	   if(stored_password!=null && stored_password==password){
-	        alert("You successfully login.");
-
-  		if(typeof(Storage) !== "undefined") {
-			sessionStorage.setItem("username", username);
-  		}
-		location.href = 'index';
-
-	   }
-
-	   else if (stored_password==null){
-		alert("Cannot find the input username.");
-	   }
-	   else {
-	        alert("Password is not correct.");
-		}
-	}
-
-	function getCookie(name) {
-	    var nameEQ = name + "=";
-	    var ca = document.cookie.split(';');
-	    for(var i=0;i < ca.length;i++) {
-	        var c = ca[i];
-	        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-	        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-	    }
-	    return null;
+	var login_state = {{ login_state}};
+	if (login_state=='-1'){
+		alert('cannot find the username');
 	}
 </script>
 </body>

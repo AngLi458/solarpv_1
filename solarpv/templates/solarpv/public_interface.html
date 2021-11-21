@@ -1,0 +1,94 @@
+{% load static %}
+
+<html>
+
+<head>
+    <title>Home page</title>
+    <meta charset="utf-8">
+    <meta name="description" content="SolarPV Research & Development">
+    <meta name="keywords" content="solarPV, SolarPV, Solar, solar, solar research">
+    <link href="{% static 'solarpv/css/DefinedByMe.css' %}" rel="stylesheet">
+    <link href="{% static 'solarpv/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'solarpv/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'solarpv/css/prettyPhoto.css' %}" rel="stylesheet">
+    <link href="{% static 'solarpv/css/responsive.css' %}" rel="stylesheet">
+    <link href="{% static 'solarpv/css/home.css' %}" rel="stylesheet">
+</head>
+<body>
+
+
+<header class="navbar navbar-static-top navbar-default">
+    <div class="container header" align="center">
+        <div class="logo" align="center">
+            <a href=index"></a>
+            <img style="height: 140px;" src="{% static 'solarpv/img/logos/logo_circle_normalfont.svg' %}" alt="SolarPV Research & Development" hspace="0">
+        </div>
+        <div class="menu" style="">
+            <ul class="nav navbar-nav navbar-right" style="display: inline-block;float: none;">
+
+                <li><a href="index">Home</a></li>
+
+                <li><a href="#">Racks & Trackers</a></li>
+                <li class="dropdown"><a href="#">PV Module<i class="caret"></i></a>
+    		<div class="dropdown-content">
+    		<a href="#">Testing & Certification</a>
+    		<a href="#">RV Rating</a>
+    		</div>
+    	    </li>
+
+                <li class="dropdown"><a href="#">PV Systems<i class="caret"></i></a>
+    		<div class="dropdown-content">
+    		<a href="#">PV System Performance</a>
+    		<a href="#">Monitoring & Inspection</a>
+    		<a href="#">Performance Analysis</a>
+    		<a href="#">Compare System</a>
+    		<a href="#">Certification</a>
+    		</div>
+    	    </li>
+
+                <li class="dropdown"><a href="#">Data Analytics<i class="caret"></i></a>
+    		<div class="dropdown-content">
+    		<a href="#">Module lifetime prediction</a>
+    		<a href="#">Energy Prediction</a>
+    		</div>
+    	    </li>
+
+                <li class="dropdown"><a href="#">Cybersecurity<i class="caret"></i></a>
+    		<div class="dropdown-content">
+    		<a href="#">Cybersecurity monitor</a>
+    		<a href="#">Energy Prediction</a>
+    		</div>
+    	    </li>
+
+                <li><a href="#">Contact Us</a></li>
+
+            </ul>
+
+        </div>
+    </div>
+</header>
+
+<form action="{% url 'public_interface' %}" method="get">
+  <div class="container" >
+	<input name="q" type="text" placeholder="Search...">
+      	<button type="submit" >Search</button>
+  </div>
+</form>
+
+{% for cert in certs_list %}
+	<strong>{{cert}}</strong>
+<ul>
+	<li> Certificate ID: {{cert.certificate_id}} </li>
+	<li> Certificate Number: {{cert.cert_num}} </li>
+	<li> Location: {{cert.location.address1}}, {{cert.location.city}}, {{cert.location.state}}, {{cert.location.country}}</li>
+	<li> Report Number: {{cert.report_num}} </li>
+	<li> Contact: {{cert.contact.first_name}} {{cert.contact.middle_name}} {{cert.contact.last_name}}</li>
+	<li> Test Standard: {{cert.test_standard}} </li>
+	<li> Product: {{cert.product.name}} </li>
+	<li> Issue Date: {{cert.cert_issue_date}} </li>
+</ul>
+<br>
+{% endfor %}
+
+</body>
+</html>

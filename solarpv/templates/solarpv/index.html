@@ -76,6 +76,7 @@
 
     	<div class="nav navbar-nav" style="float: left;">
     		<li><a href="webportal" class="loginRegister" id="webportal">Web Portal</a></li>
+    		<li><a href="api/certificates" class="loginRegister" id="public_interface">Public Interface</a></li>
     	</div>
         <section id="about-us">
             <div class="InfoContainer">
@@ -248,15 +249,13 @@
 
 $(document).ready(function() {
 
-	if(typeof(Storage) !== "undefined") {
-		var username = sessionStorage.username;
-		if (username!=null){
+		var username = "{{username}}";
+		if (username!='-1'){
 			console.log(username);
 			$("#register").hide();
 			$("#login").hide();
 			$("#hellouser").text('hello ' + username);
 		}			    
-	}	
 
 });
     </script>
