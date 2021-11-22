@@ -57,7 +57,10 @@ def login(request):
             login_state = -1
             return render(request, 'solarpv/login.html', {'login_state': login_state})
         else:
-            return render(request, 'solarpv/index.html', {'username': username})
+            if user[0].is_staff.lower() == 'y':
+                return HttpResponseRedirect('/admin')
+            else:
+                return render(request, 'solarpv/index.html', {'username': username})
 
     else: 
         return render(request, 'solarpv/login.html', {'login_state': 0})
