@@ -1,5 +1,7 @@
 # coding: utf-8
-get_ipython().run_line_magic('load', 'session1')
+#get_ipython().run_line_magic('load', 'session1')
+import django
+django.setup()
 # %load session1
 from backend.models import *
 User.objects.all()
